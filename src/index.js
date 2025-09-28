@@ -1,11 +1,13 @@
 import express from "express";
 import mongoose from "mongoose";
 import { tradeRoutes } from "./routes/tradeRoutes.js";
+import { botRoutes } from "./routes/botRoutes.js";
 
 const app = express();
 app.use(express.json());
 
 app.use("/trades", tradeRoutes);
+app.use("/bot", botRoutes);
 
 mongoose
   .connect(
